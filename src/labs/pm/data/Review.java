@@ -25,7 +25,7 @@ public class Review {
     private Rating rating;
     private String comments;
 
-    public Review(Rating rating, String commens) {
+    public Review(Rating rating, String comments) {
         this.rating = rating;
         this.comments = comments;
     }
@@ -33,7 +33,7 @@ public class Review {
     public Rating getRating() {
         return rating;
     }
-
+    
     public String getComments() {
         return comments;
     }
