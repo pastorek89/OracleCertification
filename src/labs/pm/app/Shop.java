@@ -37,14 +37,20 @@ public class Shop {
     public static void main(String[] args) {
         ProductManager pm = new ProductManager(Locale.UK);
         Product p1 = pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
-        pm.printProductReport();
+        pm.printProductReport(p1);
         p1 = pm.reviewProduct(p1, Rating.FOUR_STAR, "A nice cup of tee");
         p1 = pm.reviewProduct(p1, Rating.TWO_STAR, "Bleee");
         p1 = pm.reviewProduct(p1, Rating.THREE_STAR, "Just add some lemon");
         p1 = pm.reviewProduct(p1, Rating.FOUR_STAR, "Really good");
         p1 = pm.reviewProduct(p1, Rating.FIVE_STAR, "Great!");        
-        pm.printProductReport();
-//        Product p2 = pm.createProduct(102, "Coffee", BigDecimal.valueOf(1.99), Rating.FOUR_STAR);
+        pm.printProductReport(p1);
+        
+        Product p2 = pm.createProduct(102, "Coffee", BigDecimal.valueOf(1.99), Rating.FOUR_STAR);
+        p2 = pm.reviewProduct(p2, Rating.FOUR_STAR, "A nice cup of Coffe");
+        p2 = pm.reviewProduct(p2, Rating.TWO_STAR, "Bleee");
+        p2 = pm.reviewProduct(p2, Rating.THREE_STAR, "Just add some sugar");
+        pm.printProductReport(p2);
+        
 //        Product p3 = pm.createProduct(103, "Cake", BigDecimal.valueOf(1.99), Rating.FIVE_STAR, LocalDate.now().plusDays(2));
 //        Product p4 = pm.createProduct(105, "Cookie", BigDecimal.valueOf(3.99), Rating.TWO_STAR, LocalDate.now());
 //        Product p5 = p3.applyRating(Rating.THREE_STAR);
