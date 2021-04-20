@@ -94,19 +94,10 @@ public abstract class Product implements Rateable<Product> {
         if (this == obj) {
             return true;
         }
-        if (obj == null) {
-            return false;
+        if (obj instanceof Product) {
+            final Product other = (Product) obj;
+            return this.id == other.id;
         }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Product other = (Product) obj;
-        if (this.id != other.id) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        return true;
+        return false;
     }
 }
